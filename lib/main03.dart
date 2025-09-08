@@ -8,7 +8,8 @@ void main(){
       body: Column(children: const[
         MyApp(),
         MyButton(),
-        MyText()])
+        MyText(),
+        MyImg()])
     ),
   ));
 }
@@ -82,6 +83,17 @@ class MyText extends StatelessWidget {
           decorationStyle: TextDecorationStyle.dashed
         )
       ),
+    );
+  }
+}
+
+class MyImg extends StatelessWidget {
+  const MyImg({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: null,
     );
   }
 }

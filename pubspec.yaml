@@ -78,7 +78,9 @@ flutter:
     - family: myIcon
       fonts:
         - asset: fonts/iconfont.ttf
-          style: italic
+    - family: myIcon01
+      fonts:
+        - asset: fonts/iconfont01.ttf
     # - family: Trajan Pro
     #   fonts:
     #     - asset: fonts/TrajanPro.ttf

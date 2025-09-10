@@ -72,46 +72,35 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  List<Widget> _initGridViewData(){
+    var tempList =listData.map((value){
+      return Container(
+        decoration: BoxDecoration(border: Border.all(
+          color: Color.fromRGBO(200, 200, 200, 1),
+          width: 2
+        )),
+        child: Column(
+          children: [
+            Image.network(value["imageUrl"],fit:BoxFit.cover),
+            SizedBox(height: 10,),
+            Text(value["title"])
+          ],
+        ),
+      );
+    });
+    return tempList.toList();
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    return  ListView(
-      children: [
-        Container(
-          width: double.infinity,
-          height: 200,
-          color: Color.fromRGBO(0, 0, 0, 1),
-        ),
-        Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: SizedBox(
-                height: 180,
-                child: Image.network("https://www.itying.com/images/flutter/3.png", fit:BoxFit.cover,),
-              )
-              ),
-            Expanded(
-              flex:1, 
-              child: Column(
-                children: [
-                  Expanded(
-                    flex:1,
-                    child: SizedBox(
-                      height: 100,
-                      child: Image.network("https://www.itying.com/images/flutter/1.png", fit:BoxFit.cover),
-                    )
-                  ),
-                  Expanded(
-                    flex:1,
-                    child: SizedBox(
-                      height: 100,
-                      child: Image.network("https://www.itying.com/images/flutter/1.png", fit:BoxFit.cover),
-                    )
-                  )
-                ],
-              ))
-          ],)
-      ],
-    );
+    return GridView.extent(
+      padding: EdgeInsets.all(2),
+      maxCrossAxisExtent: 230,
+      crossAxisSpacing: 2,
+      mainAxisSpacing: 2,
+      childAspectRatio: 1,
+      children: _initGridViewData(),
+      );
   }
 }

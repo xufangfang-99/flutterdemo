@@ -72,46 +72,42 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Container(
+  //     padding: EdgeInsets.all(20),
+  //     child: Text(
+  //     "你好flutter"
+  //   ),
+  //   );
+  // }
   @override
   Widget build(BuildContext context) {
-    return  ListView(
-      children: [
-        Container(
-          width: double.infinity,
-          height: 200,
-          color: Color.fromRGBO(0, 0, 0, 1),
-        ),
-        Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: SizedBox(
-                height: 180,
-                child: Image.network("https://www.itying.com/images/flutter/3.png", fit:BoxFit.cover,),
-              )
-              ),
-            Expanded(
-              flex:1, 
-              child: Column(
-                children: [
-                  Expanded(
-                    flex:1,
-                    child: SizedBox(
-                      height: 100,
-                      child: Image.network("https://www.itying.com/images/flutter/1.png", fit:BoxFit.cover),
-                    )
-                  ),
-                  Expanded(
-                    flex:1,
-                    child: SizedBox(
-                      height: 100,
-                      child: Image.network("https://www.itying.com/images/flutter/1.png", fit:BoxFit.cover),
-                    )
-                  )
-                ],
-              ))
-          ],)
-      ],
+    return  Row(
+        children: [
+          Expanded(
+            flex:1,
+            child:IconContainer(Icons.set_meal, color: Color.fromRGBO(150, 150, 0, 1))
+            ),
+          IconContainer(Icons.search, color: Color.fromRGBO(50, 50, 0, 1))
+        ],
+    );
+  }
+}
+
+// 自定义IconContainer
+class IconContainer extends StatelessWidget {
+  final Color color;
+  final IconData icon;
+  const IconContainer(this.icon,{super.key, this.color = Colors.red});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      width: 100,
+      color: color,
+      child: Icon(icon, color: Color.fromRGBO(255, 255, 255, 1)),
     );
   }
 }

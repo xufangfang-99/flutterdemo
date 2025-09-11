@@ -118,12 +118,19 @@ class HomePage extends StatelessWidget {
           width: size.width,
           height: 44,
           child:
-           Container(
-            alignment: Alignment.center,
-            height: 44,
-            color: Color.fromRGBO(100, 100, 0, 1),
-            child: Text("我是二级导航",style: TextStyle(color:Color.fromRGBO(255, 255, 255, 1)),),
-          )
+            Row(
+              children: [
+                Expanded(
+                  flex:1,
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 44,
+                    color: Color.fromRGBO(100, 100, 0, 1),
+                    child: Text("我是二级导航",style: TextStyle(color:Color.fromRGBO(255, 255, 255, 1)),),
+                  )
+                  )
+              ],
+            )
         )
       ],
     );

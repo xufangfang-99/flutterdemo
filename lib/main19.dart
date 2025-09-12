@@ -1,0 +1,131 @@
+import 'package:flutter/material.dart';
+import './res/listData.dart';
+
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Flutter Demo",
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white,
+        )
+      ),
+      home:Scaffold(
+        appBar: AppBar(title: const Text("Flutter Icon")),
+        body: const HomePage()
+      )
+    );
+  }
+}
+
+// class HomePage extends StatelessWidget {
+//   const HomePage({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GridView.count(
+//       crossAxisCount: 3,
+//       children: [Icon(MyIcon.baihuimain),Icon(MyIcon.chonjicheng),Icon(MyIcon.catGroup),Icon(MyIcon.gengtucheng),Icon(MyIcon.hangtu),Icon(MyIcon.hongheseshengtu)],
+//     );
+//   }
+// }
+
+// class HomePage extends StatelessWidget {
+//   const HomePage({Key? key}) : super(key: key);
+
+//   List<Widget> _initGridViewData(){
+//     List<Widget> tempList=[];
+//     for (var i = 0; i < 132; i++) {
+//       tempList.add(Container(
+//         alignment: Alignment.center,
+//         decoration: BoxDecoration(
+//           color: Color.fromRGBO(100, 50, 55, 1)
+//         ),
+//         child: Text("第${i+1}个元素", style: TextStyle(fontSize: 20,color: Color.fromRGBO(255, 255, 255, 1)),),
+//       ));
+//     }
+//     return tempList;
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     return GridView.count(
+//       padding: EdgeInsets.all(2),
+//       crossAxisCount: 3,
+//       crossAxisSpacing: 2,
+//       mainAxisSpacing: 2,
+//       childAspectRatio: 1.6,
+//       children: _initGridViewData(),
+//       );
+//   }
+// }
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Stack(
+      children: [
+        ListView(
+          padding: EdgeInsets.only(top:50),
+          children: [
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+          ],
+        ),
+        Positioned(
+          right: 0,
+          top:0,
+          width: size.width,
+          height: 44,
+          child:
+           Container(
+            alignment: Alignment.center,
+            height: 44,
+            color: Color.fromRGBO(100, 100, 0, 1),
+            child: Text("我是二级导航",style: TextStyle(color:Color.fromRGBO(255, 255, 255, 1)),),
+          )
+        )
+      ],
+    );
+  }
+}

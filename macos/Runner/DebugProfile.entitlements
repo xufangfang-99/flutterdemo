@@ -8,5 +8,11 @@
 	<true/>
 	<key>com.apple.security.network.server</key>
 	<true/>
+	<!-- 添加网络权限 -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+    <!-- 允许外部网络访问 -->
+    <key>com.apple.security.network.server</key>
+    <true/>
 </dict>
 </plist>
